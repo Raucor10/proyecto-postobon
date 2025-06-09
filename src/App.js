@@ -5,7 +5,7 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, onSnapshot, q
 
 // --- Configuración de Firebase ---
 // PEGA AQUÍ LA CONFIGURACIÓN DE TU PROYECTO DE FIREBASE
-cconst firebaseConfig = {
+const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_PROJECT_ID,
