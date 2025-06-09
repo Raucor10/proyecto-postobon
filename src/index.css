@@ -1,3 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Estilos Generales */
+:root {
+  --primary-color: #0A2B4E;
+  --accent-color: #f59e0b;
+  --bg-color: #f4f5f7;
+  --card-bg: #ffffff;
+  --text-color: #172b4d;
+  --text-light: #5e6c84;
+  --border-color: #dfe1e6;
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --purple: #8b5cf6;
+  --yellow: #eab308;
+  --gray: #9ca3af;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.app-container {
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header-title { font-size: 1.5rem; font-weight: bold; }
+.header-title .title-accent { color: var(--accent-color); }
+.header-subtitle { font-size: 0.9rem; opacity: 0.9; margin-top: 0.25rem; }
+.user-info { text-align: right; }
+.user-info span { display: block; }
+.user-info button { font-size: 0.8rem; color: var(--accent-color); background: none; border: none; cursor: pointer; padding: 0; margin-top: 4px; text-decoration: underline; }
+
+/* Main Content */
+.main-container { padding: 2rem; max-width: 1280px; margin: 0 auto; }
+.loading, .error { text-align: center; padding: 4rem; font-size: 1.2rem; }
+.error { color: var(--red); }
+
+/* Login */
+.login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.login-box { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+.login-title { font-size: 2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.25rem; }
+.login-box .subtitle { margin-top: 0; margin-bottom: 2rem; color: var(--text-light); }
+.login-error { color: var(--red); font-size: 0.9rem; margin-top: 1rem; }
+
+/* Formularios y Botones */
+.form-group { margin-bottom: 1rem; text-align: left; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+.button { padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; font-size: 1rem; }
+.button-primary { background-color: var(--accent-color); color: white; width: 100%; margin-top: 1rem; }
+.button-primary:hover { background-color: #d97706; }
+.button-confirm { background-color: var(--green); color: white; }
+.button-danger { background-color: var(--red); color: white; }
+.button-revert { background-color: var(--yellow); color: var(--text-color); }
+.button[disabled] { background-color: var(--gray); cursor: not-allowed; }
+
+/* Dashboard y Listas */
+.main-title { font-size: 2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1.5rem; }
+.unit-list-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.5rem; }
+.unit-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+.unit-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.unit-card-content { padding: 1rem; }
+.unit-card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.unit-card-header h3 { margin: 0; font-size: 1.1rem; color: var(--primary-color); }
+.unit-card-details p { margin: 0.25rem 0; color: var(--text-light); font-size: 0.9rem; }
+.unit-card-details .model { font-weight: 500; color: var(--text-color); }
+.status-badge-container { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #f0f0f0; }
+.status-badge { font-size: 0.8rem; font-weight: bold; padding: 0.25rem 0.75rem; border-radius: 9999px; }
+.progress-container { padding: 0 1rem 1rem; }
+.progress-label { font-size: 0.75rem; color: var(--text-light); margin-bottom: 0.25rem; }
+.progress-bar { width: 100%; background-color: #e2e8f0; border-radius: 9999px; height: 0.65rem; overflow: hidden; }
+.progress-bar-inner { height: 100%; background-color: var(--blue); border-radius: 9999px; }
+
+/* Colores de Estado */
+.status-dot, .status-badge { color: white; }
+.status-Pendiente { background-color: var(--gray); }
+.status-En-Proceso { background-color: var(--blue); }
+.status-Completado { background-color: var(--green); }
+.status-Detenido { background-color: var(--red); }
+.status-Entregado { background-color: var(--purple); }
+
+/* Footer */
+.footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--text-light); }
+.input-error { border-color: var(--red) !important; }
