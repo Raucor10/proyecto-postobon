@@ -5,13 +5,13 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, onSnapshot, q
 
 // --- Configuración de Firebase ---
 // PEGA AQUÍ LA CONFIGURACIÓN DE TU PROYECTO DE FIREBASE
-const firebaseConfig = {
-  apiKey: "AIzaSyAI7-Ml58FrlqsLveUvP4ZMBlDvjVw3sgo",
-  authDomain: "benfor-postobon.firebaseapp.com",
-  projectId: "benfor-postobon",
-  storageBucket: "benfor-postobon.firebasestorage.app",
-  messagingSenderId: "T1071843653916",
-  appId: "1:1071843653916:web:bf93fb9bdc852744aea2d9"
+cconst firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 const appIdForPath = 'benfor-tracker-default';
 
